@@ -1,0 +1,126 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/slick.css">
+    <link rel="stylesheet" href="./assets/css/slick-theme.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/jquery.dataTables.min.css">
+    <title>Task 2</title>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <h1 class="text-center mt-2 mb-2">Slider Task</h1>
+
+        <!-- Slider -->
+
+        <div id="myslider" class="homeslider col-12 col-sm-12 mb-3">
+        </div>
+
+        <!-- Button trigger modal for Add -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add</button>
+
+        <!-- Modal for Add -->
+        <form action="" id="addform">
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Add Images And Videos</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="slidetitle" class="form-label">Slide Title</label>
+                                <input type="text" class="form-control" name="title" id="slidetitle" required
+                                    maxlength="15">
+                            </div>
+                            <div class="mb-3">
+                                <label for="slidersummary" class="form-label">Slide Summary</label>
+                                <input type="text" class="form-control" name="summary" id="slidersummary" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="slidetag" class="form-label">Tag</label>
+                                <input type="text" class="form-control" name="tag" id="slidetag">
+                            </div>
+                            <div class="mb-3">
+                                <label for="slidecategory" class="form-label">Category</label>
+                                <input type="text" class="form-control" name="category" id="slidecategory">
+                            </div>
+                            <div class="mb-3">
+                                <input type="file" id="myFileInput" name="addfile" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary" id="submitbutton">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- Button trigger modal -->
+
+        <!-- Modal for Edit -->
+        <form action="" id="editform">
+            <div class="modal fade" id="exampleModalEdit" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Slide</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="edittitle" class="form-label">Slide Title</label>
+                                <input type="text" class="form-control" id="edittitle" maxlength="15" required>
+                                <label for="editsummary" class="form-label">Slide Summary</label>
+                                <input type="text" class="form-control" id="editsummary" required>
+                                <label for="edittag" class="form-label">Tag</label>
+                                <input type="text" class="form-control" id="edittag">
+                                <label for="editcategory" class="form-label">Category</label>
+                                <input type="text" class="form-control" id="editcategory">
+                            </div>
+                            <input type="file" id="editfile">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-secondary" id="editsubmit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <!-- Table with data of Slides -->
+
+        <div class="table-responsive col-12 col-sm-12 mt-5">
+            <table class="table table-bordered" id="mytable" style="width:100%">
+                <thead>
+                    <tr>
+                        <th class="text-center col-3">File Name</th>
+                        <th class="text-center col-3">File Type</th>
+                        <th class="text-center col-3">Slide Title</th>
+                        <th class="text-center col-3">Edit/Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="tablebody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/slick.min.js"></script>
+    <script src="./assets/js/slider.js"></script>
+    <script src="./assets/js/jquery.dataTables.min.js"></script>
+</body>
+
+</html>
